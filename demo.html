@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/demo.css">
+    <title>打字游戏</title>
+</head>
+    <section>
+        <div class="sign">
+            <div class="score">
+                <span>分数：</span>
+                <div class="box">0</div>
+            </div>
+            <div class="HP">
+                <span>HP：</span>
+                <div class="box">10</div>
+            </div>
+        </div>
+        <div class="go"></div>
+        <div class="stop"></div>
+        <div class="bagin">
+            <span>准备好了吗？开始游戏吧！</span>
+            <button class="btnBagin">开始</button>
+        </div>
+        <div class="gameOver" style="display: none;">
+            <span>很遗憾，再来一次吧！</span>
+            <button class="again">再来一次</button>
+            <button class="away">残忍离开</button>
+        </div>
+    </section>
+<body>
+</body>
+</html>
+<script src="js/demo.js"></script>
+<script>
+    let game = new Game();
+     //game.start();
+    let  go = document.querySelector('.go');
+    let stop = document.querySelector('.stop');
+    let again = document.querySelector('button.again');
+    let away = document.querySelector('button.away');
+    let bagin = document.querySelector('div.bagin');
+    let btnBagin = document.querySelector('button.btnBagin');
+    go.onclick = function(){
+        game.go();
+        
+    }
+    stop.onclick = function(){
+        game.stop();
+    }
+    again.onclick = function(){
+        window.location.reload("demo.html");
+    }
+    btnBagin.onclick = function(){
+        game.start();
+        bagin.style.display = 'none';
+    }
+    away.onclick = function(){
+        window.close();
+    }
+</script>
